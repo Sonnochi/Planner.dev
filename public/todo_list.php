@@ -1,7 +1,8 @@
 <?php
 if ($_GET) {
 	var_dump($_GET);
-}if ($_POST) {
+}
+if ($_POST) {
 	var_dump($_POST);
 } 
 ?>
@@ -9,6 +10,7 @@ if ($_GET) {
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" href="CSS/todo_style.css">
 	<title> TODO List</title>
 </head>
 <body>
@@ -19,9 +21,10 @@ if ($_GET) {
 		<li>Water plants</li>
 	</ul>
 	<h2>Enter Item</h2>
-	<form method="POST" action="/todo_list.html"></form>
+	<form method="POST" action="/todo_list.php">
 		<label for="newitem">New Item</label>
 		<input type="text" id="newitem" name="newitem" placeholder="Enter Item">
-		<button type="submit">Add</button>
+		<input type="submit" value="add">
+	</form>
 	</body>
 </html>
