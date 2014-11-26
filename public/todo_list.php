@@ -26,5 +26,25 @@ if ($_POST) {
 		<input type="text" id="newitem" name="newitem" placeholder="Enter Item">
 		<input type="submit" value="add">
 	</form>
+	
+		<?php 
+
+		$items = array();
+
+		function listItems($list){
+	    $string = '';
+	    foreach ($list as $key => $items) {
+	        $key++;
+	        $string .= "[{$key}] {$items}\n";
+	    }
+	        return $string;
+} 
+		function save($items){
+	    foreach ($items as $item){
+	        fwrite($handle, $item . PHP_EOL);
+	    }
+	    fclose($handle);
+}
+?>
 	</body>
 </html>
